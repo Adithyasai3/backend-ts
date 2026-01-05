@@ -70,6 +70,21 @@ app.put("/users/:userId", (req, res) => {
   res.json(existingUser);
 });
 
+app.delete("/users/:userId",(req,res)=>{
+  const userId = Number(req.params.userId);
+  if (Number.isNaN(userId)) {
+    return res.status(400).json({ error: "Invalid user id" });
+  }
+   const existingUser = users.find(user => user.id === userId);
+
+  if (!existingUser) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  users.splice(users.indexOf(existingUser), 1);
+  res.status(204).send();
+});
+
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
