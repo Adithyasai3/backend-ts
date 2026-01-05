@@ -17,6 +17,7 @@ app.get("/hello",(req,res)=>{
   res.json({status:"Hello"});
 })
 
+
 app.get("/health",(req,res)=>{
   res.json({status:"OK"});
 })
@@ -48,6 +49,25 @@ app.get("/users/:id",(req,res)=>{
     return res.status(404).json({error:"User not found"});
   }
   res.json(user);
+});
+
+app.put("/users/:userId", (req, res) => {
+  const userId = Number(req.params.userId);
+  const { name: updatedName } = req.body;
+
+  if (!updatedName) {
+    return res.status(400).json({ error: "Name is required" });
+  }
+
+  const existingUser = users.find(person => person.id === userId);
+
+  if (!existingUser) {
+    return res.status(404).json({ error: "User not found" });
+  }
+
+  existingUser.name = updatedName;
+
+  res.json(existingUser);
 });
 
 app.listen(3000, () => {
