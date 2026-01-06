@@ -19,7 +19,9 @@ app.get("/hello",(req,res)=>{
 app.get("/hello1",(req,res)=>{
   res.json({status:"helloww"});
 })
-
+app.get("thanks",(req,res)=>{
+  res.json({status:"Thankyou"});
+})
 app.get("/health",(req,res)=>{
   res.json({status:"OK"});
 })
