@@ -16,7 +16,9 @@ let nextId = 1;
 app.get("/hello",(req,res)=>{
   res.json({status:"Hello"});
 })
-
+app.get("/clg",(req,res)=>{
+  res.json({status:"vit"});
+})
 
 app.get("/health",(req,res)=>{
   res.json({status:"OK"});
@@ -44,7 +46,6 @@ app.get("/users",(req,res)=>{
 app.get("/users/:id",(req,res)=>{
   const id = Number(req.params.id);
   const user = users.find(u =>u.id === id);
-
   if(!user){
     return res.status(404).json({error:"User not found"});
   }
@@ -88,8 +89,3 @@ app.delete("/users/:userId",(req,res)=>{
 app.listen(3000, () => {
   console.log("Server running on port 3000");
 });
-<<<<<<< HEAD
-=======
-
-
->>>>>>> a8cb617 (Update server logic)
