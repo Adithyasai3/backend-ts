@@ -13,10 +13,6 @@ type User = {
 const users: User[] = [];
 let nextId = 1;
 
-app.get("/hello",(req,res)=>{
-  res.json({status:"Hello"});
-})
-
 
 
 
