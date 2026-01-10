@@ -16,9 +16,7 @@ let nextId = 1;
 app.get("/hello",(req,res)=>{
   res.json({status:"Hello"});
 })
-app.get("/clg",(req,res)=>{
-  res.json({status:"vit"});
-})
+
 
 app.get("/health",(req,res)=>{
   res.json({status:"OK"});
