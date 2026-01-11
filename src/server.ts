@@ -17,9 +17,7 @@ app.get("/hello",(req,res)=>{
   res.json({status:"Hello"});
 })
 
-app.get("/hii",(req,res)=>{
-  res.json({status:"Hii"});
-})
+
 
 
 app.post("/users",(req,res)=>{
