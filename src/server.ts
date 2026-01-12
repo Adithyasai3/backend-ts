@@ -17,6 +17,9 @@ app.get("/hello",(req,res)=>{
   res.json({status:"Hello"});
 })
 
+app.get("/hiii",(req,res)=>{
+  res.json({status:"Hello"});
+})
 
 
 
