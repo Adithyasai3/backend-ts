@@ -18,6 +18,9 @@ app.get("/hello",(req,res)=>{
 })
 
 
+app.get("/hello1",(req,res)=>{
+  res.json({status:"Hello"});
+})
 
 app.post("/users",(req,res)=>{
   const {name}= req.body;
